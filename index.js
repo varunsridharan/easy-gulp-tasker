@@ -4,7 +4,7 @@
  * Functions & Basic Needs.
  * @type {string}
  */
-const $better_gulp_tasker = '1.4';
+const $easy_gulp_tasker = '1.0';
 
 /**
  * Required Imports.
