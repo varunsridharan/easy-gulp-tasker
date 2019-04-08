@@ -6,8 +6,8 @@
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Gitter chat][gitter-image]][gitter-url]
 
-# Better Gulp Tasker
-This **Better Gulp Tasker** is mainly focused on simplifying on creating gulp config / task 
+# Easy Gulp Tasker
+This **Easy Gulp Tasker** is mainly focused on simplifying on creating gulp config / task 
 to speed up the development process.
 
 ## Features / Plugins
@@ -32,18 +32,18 @@ to speed up the development process.
 ## Usage / Options 
 ### Step 1
 Run the below cmd first
-`npm install better-gulp-tasker --save-dev`
+`npm install easy-gulp-tasker --save-dev`
 
 ### Step 2
 Create a ***gulpfile.js*** in your project root
 and add the blow line
 
 ```js
-const $gulp_tasker = require('better-gulp-tasker');
+const $gulp_tasker = require('easy-gulp-tasker');
 ```
 > Sample ***gulpfile.js***
 ```javascript
-const $gulp_tasker = require( 'better-gulp-tasker' );
+const $gulp_tasker = require( 'easy-gulp-tasker' );
 const $gulp        = require( 'gulp' );
 
 
@@ -67,7 +67,7 @@ module.exports = {
 			rename: 'custom-file-name',
 			bable: {
 			// Your Custom Config For **Babel** 
-			// Or Set True to use deafult config provided by Better Gulp Tasker Plugin.
+			// Or Set True to use deafult config provided by Easy Gulp Tasker Plugin.
 			// If not pass a custom string and use that string in the config array to build your own common config.
 			}
 			watch:['file1','file2','file3'] // enter the files that are needed to be watched to trigger the above actions.
@@ -132,7 +132,7 @@ Blow is a list of task / config options for each file object.
 ---
 ## Contribute
 If you would like to help, please take a look at the list of
-[issues](https://github.com/varunsridharan/better-gulp-tasker/issues) or the [To Do](#-todo) checklist.
+[issues](https://github.com/varunsridharan/easy-gulp-tasker/issues) or the [To Do](#-todo) checklist.
 
 ## License
 This project is licensed under **General Public License v3.0 license**. See the [LICENSE](LICENSE) file for more info.
@@ -149,9 +149,9 @@ You can contact me on [Twitter](https://twitter.com/varunsridharan2) or through 
 | --- | --- | --- |
 
 
-[downloads-image]: http://img.shields.io/npm/dm/better-gulp-tasker.svg
-[npm-url]: https://www.npmjs.com/package/better-gulp-tasker
-[npm-image]: http://img.shields.io/npm/v/better-gulp-tasker.svg
+[downloads-image]: http://img.shields.io/npm/dm/easy-gulp-tasker.svg
+[npm-url]: https://www.npmjs.com/package/easy-gulp-tasker
+[npm-image]: http://img.shields.io/npm/v/easy-gulp-tasker.svg
 
 [gitter-url]: https://gitter.im/gulpjs/gulp
 [gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg

@@ -1,12 +1,12 @@
 {
-  "name"         : "better-gulp-tasker",
+  "name"         : "easy-gulp-tasker",
   "version"      : "1.0.0",
   "description"  : "mainly focused on simplifying on creating gulp config / task to speed up the development process.",
   "main"         : "index.js",
   "bugs"         : {
-	"url" : "https://github.com/varunsridharan/better-gulp-tasker/issues"
+	"url" : "https://github.com/varunsridharan/easy-gulp-tasker/issues"
   },
-  "homepage"     : "https://github.com/varunsridharan/better-gulp-tasker#readme",
+  "homepage"     : "https://github.com/varunsridharan/easy-gulp-tasker#readme",
   "scripts"      : {
 	"test" : "echo \"Error: no test specified\" && exit 1"
   },
