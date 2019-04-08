@@ -32,7 +32,7 @@ to speed up the development process.
 ## Usage / Options 
 ### Step 1
 Run the below cmd first
-`npm install better-gulp-boilerplate --save-dev`
+`npm install better-gulp-tasker --save-dev`
 
 ### Step 2
 Create a ***gulpfile.js*** in your project root
