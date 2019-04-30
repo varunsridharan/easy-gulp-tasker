@@ -1,4 +1,5 @@
-module.exports = {
+const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
+module.exports       = {
 	files: {
 		'your-file': {
 			dist: '', // Relative Path To Save The File.
@@ -57,8 +58,9 @@ module.exports = {
 			},
 		},
 		webpack_dev: {
-			devtool: 'inline-source-map',
+			devtool: 'source-map',
 			mode: 'development',
+			plugins: [ new UglifyJsPlugin() ],
 			target: 'node',
 			externals: {
 				jquery: 'jQuery'
