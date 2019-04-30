@@ -12,6 +12,7 @@ const $uglify                      = require( 'gulp-uglify' );
 const $babel                       = require( 'gulp-babel' );
 const $combine_files               = require( 'gulp-combine-files' );
 const $concat                      = require( 'gulp-concat' );
+const notifier                     = require( 'gulp-notify' );
 
 /**
  * Gulp Handler.
@@ -76,7 +77,13 @@ class GulpHandler {
 				this.instance = this.instance.pipe( $rename( this.config.rename ) );
 			}
 
-			this.instance = this.instance.pipe( $gulp.dest( current_path + '/' + this.config.dist ) ).on( 'end', () => {
+			this.instance = this.instance.pipe( $gulp.dest( current_path + '/' + this.config.dist ) )
+			this.instance.pipe( notifier( {
+				title: 'File Compiled',
+				message: 'Source File : ' + this.src + ' Compiled To : ' + this.config.dist + '<%= file.relative %>'
+			} ) );
+
+			this.instance.on( 'end', () => {
 				fancyLog( 'File Saved In ' + this.config.dist );
 				fancyLog( '' );
 				resolve();

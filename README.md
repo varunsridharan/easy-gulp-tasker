@@ -107,6 +107,9 @@ The below cmd will compile all the files are listed in the config.js / gulp-conf
 The below cmd will trigger `gulp.watch` function to keep track of files changes and compiles the given file.
 > $ gulp watch
 
+The below cmd will trigger a single file to compile
+> $ gulp single --file "dir/your-file-source"
+
 ---
 
 ## Builtin Tasks

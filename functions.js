@@ -82,9 +82,32 @@ const get_config = () => {
 	return $new_config;
 };
 
+/**
+ * Fetch Custom Argument Data.
+ */
+const processarg = () => {
+	let argList = process.argv;
+	let arg     = {}, a, opt, thisOpt, curOpt;
+	for( a = 0; a < argList.length; a++ ) {
+		thisOpt = argList[ a ].trim();
+		opt     = thisOpt.replace( /^\-+/, '' );
+
+		if( opt === thisOpt ) {
+			if( curOpt ) arg[ curOpt ] = opt;
+			curOpt = null;
+
+		} else {
+			curOpt        = opt;
+			arg[ curOpt ] = true;
+		}
+	}
+	return arg;
+};
+
 module.exports = {
 	get_config: get_config,
 	vsp_load_module: vsp_load_module,
 	parse_args: parse_args,
 	current_path: $current_path,
+	processarg: processarg,
 };
