@@ -13,6 +13,9 @@ const $babel                       = require( 'gulp-babel' );
 const $combine_files               = require( 'gulp-combine-files' );
 const $concat                      = require( 'gulp-concat' );
 const notifier                     = require( 'gulp-notify' );
+const sourcemaps                   = require( 'gulp-sourcemaps' );
+const through                      = require( 'through2' );
+const named                        = require( 'vinyl-named' );
 
 /**
  * Gulp Handler.
@@ -126,6 +129,7 @@ class GulpHandler {
 
 		return new Promise( ( resolve ) => {
 			this.instance = this.instance.pipe( $revert_path() );
+			this.instance = this.instance.pipe( named() );
 			this.instance = this.instance.pipe( $webpack( $options, null, ( err, stats ) => {
 				webpack_done( err, stats );
 				fancyLog( '---> Webpack End' );
@@ -254,6 +258,33 @@ class GulpHandler {
 									.on( 'error', fancyLog );
 			}
 			fancyLog( '---> Concat End' );
+			resolve();
+		} );
+	}
+
+	/**
+	 * Handles Sourcemaps.
+	 * @param $arg
+	 * @returns {Promise<*>}
+	 */
+	async sourcemaps( $arg ) {
+		return new Promise( ( resolve ) => {
+			fancyLog( '---> Sourcemaps Stars' );
+			let $options = this.get_config( 'sourcemaps', $arg );
+
+			if( false !== $options ) {
+				this.instance = this.instance.pipe( sourcemaps.init( { loadMaps: true } ) )
+									.pipe( through.obj( function( file, enc, cb ) {
+										const isSourceMap = /\.map$/.test( file.path );
+										if( !isSourceMap ) this.push( file );
+										cb();
+									} ) )
+									.pipe( sourcemaps.write( '.' ) )
+									.pipe( $gulp.dest( current_path + '/' + this.config.dist ) )
+									.on( 'error', fancyLog );
+
+			}
+			fancyLog( '---> Sourcemaps Ends' );
 			resolve();
 		} );
 	}

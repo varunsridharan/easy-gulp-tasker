@@ -30,6 +30,9 @@
 		"gulp-rename": "*",
 		"fancy-log": "*",
 		"supports-color": "*",
-		"webpack-stream": "*"
+		"webpack-stream": "*",
+		"gulp-sourcemaps": "^2.6.5",
+		"vinyl-named": "^1.1.0",
+		"uglifyjs-webpack-plugin": "^2.1.2"
 	}
 }
