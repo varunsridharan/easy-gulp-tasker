@@ -1,6 +1,6 @@
 {
 	"name": "easy-gulp-tasker",
-	"version": "1.0.15",
+	"version": "1.0.10",
 	"description": "mainly focused on simplifying on creating gulp config / task to speed up the development process.",
 	"main": "index.js",
 	"bugs": {
