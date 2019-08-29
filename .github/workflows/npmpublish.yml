@@ -22,10 +22,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm publish ./
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}} 
-    
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+
   publish-gpr:
-    needs: build
+    needs: publish-npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
