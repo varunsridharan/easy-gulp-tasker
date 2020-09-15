@@ -10,6 +10,10 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
+	  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varunsridharan/easy-gulp-tasker.git"
+  },
 	"author": "Varun Sridharan <varunsridharan23@gmail.com> (http://varunsridharan.in)",
 	"license": "GPL-3.0-or-later",
 	"dependencies": {
